@@ -7,7 +7,6 @@ export const verifyJWT = async (req,res,next) => {
     // using cookieParser() middleware we added cookies in res and req
     try {
         const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ","");
-        console.log(req)
     
         if(!token) throw new ApiError(401,"Unathourized request");
     
